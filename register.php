@@ -8,6 +8,8 @@
 <body>
     <div id="inputContainer">
         <form id="loginForm" action="register.php" method="POST">
+            <h1>HI</h1>
+
             <h2>Login to your account</h2>
             <p>
                 <label for="loginUsername">Username</label>
