@@ -2,10 +2,11 @@
 <html>
 
 <head>
-    <title>Slotify</title>
+    <title>Sloth</title>
 </head>
 
 <body>
+    HI
 </body>
 
 </html>
