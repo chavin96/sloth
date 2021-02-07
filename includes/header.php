@@ -19,9 +19,16 @@ if (isset($_SESSION['userLoggedIn'])) {
 <head>
     <title>Sloth</title>
     <link rel="stylesheet" href="assests/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="assests/js/script.js"></script>
 </head>
 
 <body>
+    <!-- <script>
+    var audioElement = new Audio();
+    audioElement.setTrack("assests/music/bensound-acousticbreeze.mp3");
+    audioElement.audio.play();
+    </script> -->
     <div id="mainContainer">
         <div id="topContainer">
             <?php include("includes/navBarContainer.php"); ?>
