@@ -18,7 +18,26 @@ function setTrack(trackId, newPlaylist, play) {
     $.post("includes/handlers/ajax/getSongJson.php", {
         songId: trackId
     }, function(data) {
-        console.log(data);
+        var track = JSON.parse(data);
+        $(".trackName span").text(track.title);
+
+        $.post("includes/handlers/ajax/getArtistJson.php", {
+            artistId: track.artist
+        }, function(data) {
+            var artist = JSON.parse(data);
+            $(".artistName span").text(artist.name);
+
+        });
+
+        $.post("includes/handlers/ajax/getAlbumJson.php", {
+            albumId: track.album
+        }, function(data) {
+            var album = JSON.parse(data);
+            $(".albumLink img").attr("src", album.artworkPath);
+        });
+
+        audioElement.setTrack(track.path);
+        audioElement.play();
     });
     if (play) {
         audioElement.play();
@@ -43,12 +62,11 @@ function pauseSong() {
         <div id="nowPlayingLeft">
             <div class="content">
                 <span class="albumLink">
-                    <img class="albumArtwork"
-                        src="https://image.freepik.com/free-vector/pack-colorful-square-emoticons_23-2147589525.jpg">
+                    <img class="albumArtwork" src="">
                 </span>
                 <div class="trackInfo">
-                    <span class="trackName"><span>Happy</span></span>
-                    <span class="artistName"><span>John Smith</span></span>
+                    <span class="trackName"><span></span></span>
+                    <span class="artistName"><span></span></span>
 
                 </div>
             </div>
